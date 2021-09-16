@@ -2,7 +2,7 @@ import React from 'react';
 import WeatherCard from './WeatherCard';
 import {useEffect} from 'react'
 
-function WeatherCards({location,setWeather}) {
+function WeatherCards({location,weather,setWeather}) {
 
     
 
@@ -30,7 +30,7 @@ function WeatherCards({location,setWeather}) {
 		}, []);
     return (
         <div>
-            <WeatherCard/>
+            <WeatherCard weather={weather}/>
         </div>
     );
 }

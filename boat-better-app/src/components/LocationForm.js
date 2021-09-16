@@ -32,10 +32,12 @@ function LocationForm({location, setLocation}) {
 					<p>Longitude:</p>
 					<input type='text' onChange={changeLng} placeholder='-158.005972' />
 					<br />
-					<Link to='/week_weather'>
-						<button type='submit'>Submit</button>
-					</Link>
+
+					<button type='submit'>Submit</button>
 				</form>
+				<Link to='/week_weather'>
+                    <button>See Results</button>
+                </Link>
 			</div>
 		);
 }
