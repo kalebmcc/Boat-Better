@@ -9,7 +9,10 @@ function App() {
 
   
 
-  const [location, setLocation] = useState({latitude: null, longitude: null})
+  const [location, setLocation] = useState({
+		latitude: 20.886119,
+		longitude: -158.005972,
+	});
   
 
   return (

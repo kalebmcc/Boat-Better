@@ -4,12 +4,20 @@ import {useEffect,useState} from 'react'
 import data from '../data.json'
 import {Route} from 'react-router-dom'
 import WeatherCardDaily from './WeatherCardDaily';
+import GoogleMap from './GoogleMap';
 
 function WeatherCards({location}) {
 
 	const [weather, setWeather] = useState(data.hours);
 
-    
+    let map;
+
+		function initMap() {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: { lat: -34.397, lng: 150.644 },
+				zoom: 8,
+			});
+		}
 
     // useEffect(() => {
 
@@ -36,12 +44,13 @@ function WeatherCards({location}) {
 
 
 
-
 	if (!weather.length) {
 		return <p>loading...</p>;
 		}
     return (
 			<div>
+				<div id="map"></div>
+				<GoogleMap location={location}/>
 				<h5>latitude: 20.886119 / longitude: -158.005972</h5>
 				<Route path='/weather' exact>
 					<WeatherCard weather={weather} />
