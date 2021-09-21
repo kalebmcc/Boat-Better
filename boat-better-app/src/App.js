@@ -7,7 +7,7 @@ import {Route} from 'react-router-dom'
 
 function App() {
 
-  const [weather, setWeather] = useState()
+  
 
   const [location, setLocation] = useState({latitude: null, longitude: null})
   
@@ -17,8 +17,8 @@ function App() {
       
       <Header location={location} setLocation={setLocation}/>
       <Route path='/' exact render={() => <LocationForm location={location} setLocation={setLocation}/>}/>
-      <Route path='/week_weather' render={() =>
-      <WeatherCards location={location} setWeather={setWeather} weather={weather}/>}/>
+      <Route path='/weather' render={() =>
+      <WeatherCards location={location}/>}/>
     </div>
   );
 }

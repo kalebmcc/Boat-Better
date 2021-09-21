@@ -1,7 +1,9 @@
 import React from 'react';
-import {Link, Reroute} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 function LocationForm({location, setLocation}) {
+
+    const history = useHistory();
 
     let lat = null
     let lng = null
@@ -9,6 +11,8 @@ function LocationForm({location, setLocation}) {
     function handleSubmit(event) {
         event.preventDefault();
         setLocation({latitude: lat, longitude: lng})
+
+        history.push('/week_weather');
 
     }
 
@@ -35,9 +39,6 @@ function LocationForm({location, setLocation}) {
 
 					<button type='submit'>Submit</button>
 				</form>
-				<Link to='/week_weather'>
-                    <button>See Results</button>
-                </Link>
 			</div>
 		);
 }

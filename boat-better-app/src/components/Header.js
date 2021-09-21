@@ -5,7 +5,11 @@ function Header(props) {
     return (
 			<div>
 				<Link to='/'>
-					<h1>Boat Better</h1>
+					<div className='header'>
+						<span>&#9875;</span>
+						<h1>Boat Better </h1>
+						<span>&#9875;</span>
+					</div>
 				</Link>
 			</div>
 		);

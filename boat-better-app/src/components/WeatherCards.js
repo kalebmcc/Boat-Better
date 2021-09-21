@@ -1,38 +1,56 @@
 import React from 'react';
 import WeatherCard from './WeatherCard';
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
+import data from '../data.json'
+import {Route} from 'react-router-dom'
+import WeatherCardDaily from './WeatherCardDaily';
 
-function WeatherCards({location,weather,setWeather}) {
+function WeatherCards({location}) {
+
+	const [weather, setWeather] = useState(data.hours);
 
     
 
-    useEffect(() => {
+    // useEffect(() => {
 
-                const lat = location.latitude;
-				const lng = location.longitude;
-				const params = 'airTemperature,cloudCover,windDirection,windSpeed ';
+    //             const lat = 20.886119;
+	// 			const lng = -158.005972;
+	// 			const params = 'airTemperature,cloudCover,windDirection,windSpeed ';
 
 
-			const url =
-				`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`;
+	// 		const url =
+	// 			`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`;
 
-			fetch(url,{
-                headers: {
-                    'Authorization': `${process.env.REACT_APP_STORMGLASS_KEY}`
-                }
-                })
-				.then((res) => res.json())
-				.then((json) => {
-					console.log(json);
-					setWeather([json]);
-				})
-				.catch(console.error);
-		}, []);
+	// 		fetch(url,{
+    //             headers: {
+    //                 'Authorization': `${process.env.REACT_APP_STORMGLASS_KEY}`
+    //             }
+    //             })
+	// 			.then((res) => res.json())
+	// 			.then((res) => {
+	// 				console.log(res);
+	// 				setWeather(res.hours);
+	// 			})
+	// 			.catch(console.error);
+	// 	}, []);
+
+
+
+
+	if (!weather.length) {
+		return <p>loading...</p>;
+		}
     return (
-        <div>
-            <WeatherCard weather={weather}/>
-        </div>
-    );
+			<div>
+				<h5>latitude: 20.886119 / longitude: -158.005972</h5>
+				<Route path='/weather' exact>
+					<WeatherCard weather={weather} />
+				</Route>
+				<Route path='/weather/day/:index'>
+					<WeatherCardDaily weather={weather}/>
+				</Route>
+			</div>
+		);
 }
 
 export default WeatherCards;
