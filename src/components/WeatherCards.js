@@ -1,7 +1,6 @@
 import React from 'react';
 import WeatherCard from './WeatherCard';
 import {useEffect,useState} from 'react'
-import data from '../data.json'
 import {Route, Link} from 'react-router-dom'
 import WeatherCardDaily from './WeatherCardDaily';
 
