@@ -26,6 +26,7 @@ button {
   color: #F7F3E9;
   border: none;
   font-family: 'Arial Narrow Bold', sans-serif;
+  padding-left: 10px;
 }
 
 .location-form {
