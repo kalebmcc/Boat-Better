@@ -9,10 +9,11 @@ function WeatherCards({location}) {
 
 	const [weather, setWeather] = useState([]);
 
+
     useEffect(() => {
 
-                const lat = location.latitude;
-				const lng = location.longitude;
+                 const lat = location.latitude;
+				 const lng = location.longitude;
 				const params = 'airTemperature,cloudCover,windDirection,windSpeed ';
 
 
@@ -39,7 +40,7 @@ function WeatherCards({location}) {
     return (
 			<div className='gallery'>
 				<div>
-					<h5>latitude: 20.886119 / longitude: -158.005972</h5>
+					<h5>latitude: {location.latitude} / longitude: {location.longitude}</h5>
 
 					<Route path='/weather' exact>
 						<Link to='/'>
