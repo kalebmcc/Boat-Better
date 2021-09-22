@@ -31,13 +31,17 @@ function LocationForm({location, setLocation}) {
 			<div className='location-form'>
 				<h3>Enter Location:</h3>
 				<form onSubmit={handleSubmit}>
-					<p>Latitude:</p>
+					<p>
+						<strong>Latitude:</strong>
+					</p>
 					<input type='text' onChange={changeLat} placeholder='20.886119' />
-					<p>Longitude:</p>
+					<p><strong>Longitude:</strong></p>
 					<input type='text' onChange={changeLng} placeholder='-158.005972' />
 					<br />
 
-					<button type='submit'>Submit</button>
+					<button type='submit'>
+						<strong>SUBMIT</strong>
+					</button>
 				</form>
 			</div>
 		);

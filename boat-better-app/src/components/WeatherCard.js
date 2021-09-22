@@ -15,7 +15,7 @@ function WeatherCard({weather}) {
 			{daysArr.map((hour,index) => (
 				<Link
 					to={'/weather/day/' + index}
-					style={{ color: 'black', text_decoration: 'none' }}>
+					style={{ textDecoration: 'none' }}>
 					<div className='days'>
 						<p>Air Temp: {hour.airTemperature.noaa}&deg; Celcius </p>
 						<p>Cloud Cover: {hour.cloudCover.noaa}%</p>
