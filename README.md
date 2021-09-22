@@ -3,11 +3,11 @@ This application utilizes the Stormglass.io API to display weather information o
 <br>
 
 ![Screen Shot 2021-09-22 at 3 04 01 PM](https://user-images.githubusercontent.com/88410952/134413914-cfd87cc8-8332-4893-ba9e-18ff0017d3cd.png)
-Main Screen/Location Form
+<br>Main Screen/Location Form<br>
 ![Screen Shot 2021-09-22 at 3 05 45 PM](https://user-images.githubusercontent.com/88410952/134414144-d82bd746-8eca-4b1a-853a-9f65bb24c9d1.png)
-7 Day Search Results
+<br>7 Day Search Results<br>
 ![Screen Shot 2021-09-22 at 3 05 59 PM](https://user-images.githubusercontent.com/88410952/134414149-e27a5503-839c-48ce-8e60-9fdfb8c92e6d.png)
-24-hour Search Results
+<br>24-hour Search Results
 
 <br>
 The focus is that this would be a marine focused application for those that choose to venture out on the open seas(or lakes).
