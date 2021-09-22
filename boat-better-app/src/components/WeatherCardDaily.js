@@ -7,8 +7,6 @@ function WeatherCardDaily({weather}) {
 
 const { index } = useParams();
 
-console.log(index);
-
 let indexNumber = (parseInt(index) + 1) * 24;
 
 
@@ -29,7 +27,6 @@ let today = currentDay.split('').splice(0,10).join('')
 
        printIndex(indexNumber);
        indexes.sort((a, b) => a - b);
-       console.log(indexes);
        daysArr = indexes.map((i) => weather[i]);
     
 
@@ -42,17 +39,19 @@ let today = currentDay.split('').splice(0,10).join('')
 			<div>
 				<h2>{today}</h2>
 				<Link to='/weather'>
-					<button>Back</button>
+					<button>
+						<strong>BACK</strong>
+					</button>
 				</Link>
 				<div className='display-cards'>
 					{daysArr.map((hour) => (
 						<div className='days'>
 							<h4>Time: {hour.time.split('').splice(11, 5).join('')}</h4>
-							<p>Date: {hour.time.split('').splice(0, 10).join('')}</p>
-							<p>Air Temp: {hour.airTemperature.noaa}&deg; Celcius </p>
-							<p>Cloud Cover: {hour.cloudCover.noaa}%</p>
-							<p>Wind Direction: {hour.windDirection.noaa}&deg;</p>
-							<p>Wind Speed: {hour.windSpeed.noaa} mps</p>
+							<p><strong>Date:</strong> {hour.time.split('').splice(0, 10).join('')}</p>
+							<p><strong>Air Temp:</strong> {hour.airTemperature.noaa}&deg; Celcius </p>
+							<p><strong>Cloud Cover:</strong> {hour.cloudCover.noaa}%</p>
+							<p><strong>Wind Direction:</strong> {hour.windDirection.noaa}&deg;</p>
+							<p><strong>Wind Speed:</strong> {hour.windSpeed.noaa} mps</p>
 						</div>
 					))}
 				</div>

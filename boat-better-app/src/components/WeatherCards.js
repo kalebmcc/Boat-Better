@@ -4,34 +4,32 @@ import {useEffect,useState} from 'react'
 import data from '../data.json'
 import {Route, Link} from 'react-router-dom'
 import WeatherCardDaily from './WeatherCardDaily';
-// import GoogleMap from './GoogleMap';
 
 function WeatherCards({location}) {
 
-	const [weather, setWeather] = useState(data.hours);
+	const [weather, setWeather] = useState([]);
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //             const lat = 20.886119;
-	// 			const lng = -158.005972;
-	// 			const params = 'airTemperature,cloudCover,windDirection,windSpeed ';
+                const lat = location.latitude;
+				const lng = location.longitude;
+				const params = 'airTemperature,cloudCover,windDirection,windSpeed ';
 
 
-	// 		const url =
-	// 			`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`;
+			const url =
+				`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`;
 
-	// 		fetch(url,{
-    //             headers: {
-    //                 'Authorization': `${process.env.REACT_APP_STORMGLASS_KEY}`
-    //             }
-    //             })
-	// 			.then((res) => res.json())
-	// 			.then((res) => {
-	// 				console.log(res);
-	// 				setWeather(res.hours);
-	// 			})
-	// 			.catch(console.error);
-	// 	}, []);
+			fetch(url,{
+                headers: {
+                    'Authorization': `${process.env.REACT_APP_STORMGLASS_KEY}`
+                }
+                })
+				.then((res) => res.json())
+				.then((res) => {
+					setWeather(res.hours);
+				})
+				.catch(console.error);
+		}, []);
 
 
 
@@ -39,21 +37,22 @@ function WeatherCards({location}) {
 		return <p>loading...</p>;
 		}
     return (
-			<div>
-				{/* <GoogleMap location={location}/> */}
-				<h5>latitude: 20.886119 / longitude: -158.005972</h5>
+			<div className='gallery'>
+				<div>
+					<h5>latitude: 20.886119 / longitude: -158.005972</h5>
 
-				<Route path='/weather' exact>
-					<Link to='/'>
-						<button>
-							<strong>BACK</strong>
-						</button>
-					</Link>
-					<WeatherCard weather={weather} />
-				</Route>
-				<Route path='/weather/day/:index'>
-					<WeatherCardDaily weather={weather} />
-				</Route>
+					<Route path='/weather' exact>
+						<Link to='/'>
+							<button>
+								<strong>BACK</strong>
+							</button>
+						</Link>
+						<WeatherCard weather={weather} />
+					</Route>
+					<Route path='/weather/day/:index'>
+						<WeatherCardDaily weather={weather} />
+					</Route>
+				</div>
 			</div>
 		);
 }

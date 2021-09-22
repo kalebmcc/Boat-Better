@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-// import GoogleMap from './GoogleMap'
 
 function Header(props) {
     return (
@@ -12,7 +11,6 @@ function Header(props) {
 						<span>&#9875;</span>
 					</div>
 				</Link>
-				{/* <GoogleMap/> */}
 			</div>
 		);
 }

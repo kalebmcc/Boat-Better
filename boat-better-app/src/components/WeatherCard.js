@@ -12,16 +12,16 @@ function WeatherCard({weather}) {
 
 	return (
 		<div className='display-cards'>
-			{daysArr.map((hour,index) => (
-				<Link
-					to={'/weather/day/' + index}
-					style={{ textDecoration: 'none' }}>
+			{daysArr.map((hour, index) => (
+				<Link to={'/weather/day/' + index} style={{ textDecoration: 'none' }}>
 					<div className='days'>
-						<p>Air Temp: {hour.airTemperature.noaa}&deg; Celcius </p>
-						<p>Cloud Cover: {hour.cloudCover.noaa}%</p>
-						<p>Wind Direction: {hour.windDirection.noaa}&deg;</p>
-						<p>Wind Speed: {hour.windSpeed.noaa} mps</p>
-						<p>{hour.time}</p>
+						<h4>Date: {hour.time.split('').splice(0, 10).join('')}</h4>
+						<p><strong>Time:</strong> {hour.time.split('').splice(11, 5).join('')}</p>
+						<p><strong>Air Temp:</strong> {hour.airTemperature.noaa}&deg; Celcius </p>
+						<p><strong>Cloud Cover:</strong> {hour.cloudCover.noaa}%</p>
+						<p><strong>Wind Direction:</strong> {hour.windDirection.noaa}&deg;</p>
+						<p><strong>Wind Speed:</strong> {hour.windSpeed.noaa} mps</p>
+						<p>**Click for Hourly Info**</p>
 					</div>
 				</Link>
 			))}

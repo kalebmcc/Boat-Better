@@ -1,5 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom'
+import '../App.css'
 
 function LocationForm({location, setLocation}) {
 
@@ -12,7 +13,7 @@ function LocationForm({location, setLocation}) {
         event.preventDefault();
         setLocation({latitude: lat, longitude: lng})
 
-        history.push('/week_weather');
+        history.push('/weather');
 
     }
 
@@ -29,20 +30,24 @@ function LocationForm({location, setLocation}) {
 
     return (
 			<div className='location-form'>
-				<h3>Enter Location:</h3>
-				<form onSubmit={handleSubmit}>
-					<p>
-						<strong>Latitude:</strong>
-					</p>
-					<input type='text' onChange={changeLat} placeholder='20.886119' />
-					<p><strong>Longitude:</strong></p>
-					<input type='text' onChange={changeLng} placeholder='-158.005972' />
-					<br />
+				<div>
+					<h3>Enter Location:</h3>
+					<form onSubmit={handleSubmit}>
+						<p>
+							<strong>Latitude:</strong>
+						</p>
+						<input type='text' onChange={changeLat} placeholder='20.886119' />
+						<p>
+							<strong>Longitude:</strong>
+						</p>
+						<input type='text' onChange={changeLng} placeholder='-158.005972' />
+						<br />
 
-					<button type='submit'>
-						<strong>SUBMIT</strong>
-					</button>
-				</form>
+						<button type='submit'>
+							<strong>SUBMIT</strong>
+						</button>
+					</form>
+				</div>
 			</div>
 		);
 }

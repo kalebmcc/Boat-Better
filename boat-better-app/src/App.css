@@ -3,6 +3,10 @@ body{
   color:#F7F3E9
 }
 
+h5 {
+  margin-left: 25px;
+}
+
 .header{
   display: flex;
   background-color: #5EAAA8 ;
@@ -21,24 +25,42 @@ h3 {
   background-color:  ;
 }
 
+h2 {
+  margin-left: 25px;
+}
+
 button {
   background-color: #F05945;
   color: #F7F3E9;
   border: none;
   font-family: 'Arial Narrow Bold', sans-serif;
-  padding-left: 10px;
+  margin-left: 25px;
 }
 
 .location-form {
-  display: grid;
+  display: flex;
+  justify-content: center;
   
 }
+
+.info {
+  text-align: center;
+  background-color: #5EAAA8;
+  border: #F05945 solid 3px;
+  padding: 0px 50px;
+  inline-size: 350px;
+  margin: 10px auto;
+}
+
+
 
 .days {
   background-color: #5EAAA8;
   border: 3px solid #F05945;
   margin: 5px;
   color: #F7F3E9;
+  padding: 10px;
+  width: 190px;
 
 }
 
