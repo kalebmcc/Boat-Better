@@ -36,7 +36,5 @@ function App() {
 	);
 }
 
-//20.8862219
-//-158.005972
 
 export default App;
