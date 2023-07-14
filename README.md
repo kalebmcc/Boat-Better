@@ -1,4 +1,7 @@
 # Boat-Better
+
+Try it out here: <a href="https://boat-better.netlify.app/" target="_blank">https://boat-better.netlify.app/</a>
+
 This application utilizes the Stormglass.io API to display weather information on the provided Latitude and Longitude. It can display the weather for 7 days, or for each hour on one of the 7 days.
 <br>
 
